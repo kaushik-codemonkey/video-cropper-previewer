@@ -56,7 +56,7 @@ const VideoCropper = (props) => {
     // <div style={showCropper? {display: 'block'} : {display: 'none'}}>
     <div >
       <div className="crop-container">
-        <ReactCrop crop={crop} onComplete={(c)=>setCrop(c)} aspect={aspectRatio} locked >
+        <ReactCrop crop={crop} onChange={(c)=>setCrop(c)} aspect={aspectRatio} locked >
         <video
           src={source}
           autoPlay
