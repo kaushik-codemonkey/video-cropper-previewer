@@ -68,3 +68,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Objective
+
+There will be a video selector component
+On selecting a file the cropper would pop up in a modal --- we could crop the portion (crop area will be fixed) and click on okay
+the modal will close and the cropped video portion will be previewed in the home page above video selector component
