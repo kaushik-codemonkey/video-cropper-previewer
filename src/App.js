@@ -24,7 +24,6 @@ const App = () => {
     canvas.height = crop.height * pixelRatio;
     ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
     ctx.imageSmoothingQuality = 'high';
-    console.log(sourceUrl)
     ctx.drawImage(
       document.createElement('video',{src:sourceUrl}),
       crop.x * scaleX,
@@ -47,14 +46,14 @@ const App = () => {
   useEffect(()=>{
     chosenFile&&setSourceUrl(URL.createObjectURL(chosenFile));
   },[chosenFile])
-  useEffect(()=>{
-    console.log(crop)
-  },[crop?.x,crop?.y])
+  // useEffect(()=>{
+  //   console.log(crop)
+  // },[crop?.x,crop?.y])
   return (
     <div className="App">
       <input type={'file'} onChange={(e)=>setChosenFile(e.target.files[0])}/>
       <VideoCropper source={sourceUrl} showCropper={showCropper} setCrop={setCrop} onCrop={cropVideoNow} setVideoProps={setVideoProps}/>
-      <VideoPreviewer source={output} showCropper={showCropper} crop={crop}/>
+      <VideoPreviewer source={videoProps && sourceUrl} cropOptions={crop} showCropper={showCropper} crop={crop}/>
       <button
         onClick={() => {
           setShowCropper((prev) => !prev);
